@@ -7,25 +7,40 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Config
     /// </summary>
     public class GlobalConfiguration
     {
-        public ServerConfiguration Server;
-        public ApplicationConfiguration Application;
-        public CommonConfiguration Common;       
+        private readonly ServerConfiguration Server;
+        private readonly ApplicationConfiguration Application;
+        private readonly CommonConfiguration Common;        
         private readonly EditorConfiguration Editor;
 
         /// <summary>
         /// Get all configurations
         /// </summary>
         public GlobalConfiguration()
-        {
+        {            
             Server = new ServerConfiguration();
-            Application = new ApplicationConfiguration();          
-            Common = new CommonConfiguration();         
+            Application = new ApplicationConfiguration();         
+            Common = new CommonConfiguration();        
             Editor = new EditorConfiguration();
         }       
 
         public EditorConfiguration GetEditorConfiguration()
         {
             return Editor;
+        }
+
+        public ServerConfiguration GetServerConfiguration()
+        {
+            return Server;
+        }
+
+        public ApplicationConfiguration GetApplicationConfiguration()
+        {
+            return Application;
+        }
+
+        public CommonConfiguration GetCommonConfiguration()
+        {
+            return Common;
         }
     }
 }

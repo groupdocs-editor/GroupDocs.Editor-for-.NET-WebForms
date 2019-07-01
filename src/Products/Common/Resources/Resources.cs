@@ -9,7 +9,7 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
     /// Resources
     /// </summary>
     public class Resources
-    {
+    {        
         /// <summary>
         /// Get free file name for uploaded file if such file already exists
         /// </summary>
@@ -23,25 +23,32 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
             {
                 // get all files from the directory
                 string[] listOfFiles = Directory.GetFiles(directory);
-                for (int i = 0; i < listOfFiles.Length; i++)
+                if (listOfFiles.Length > 0)
                 {
-                    // check if file with current name already exists
-                    int number = i + 1;
-                    string newFileName = Path.GetFileNameWithoutExtension(fileName) + "-Copy(" + number + ")." + Path.GetExtension(fileName);
-                    resultFileName = Path.Combine(directory, newFileName);
-                    if (File.Exists(resultFileName))
+                    for (int i = 0; i < listOfFiles.Length; i++)
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        break;
+                        // check if file with current name already exists
+                        int number = i + 1;
+                        string newFileName = Path.GetFileNameWithoutExtension(fileName) + "-Copy(" + number + ")" + Path.GetExtension(fileName);
+                        resultFileName = Path.Combine(directory, newFileName);
+                        if (File.Exists(resultFileName))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
+                else
+                {
+                    resultFileName = fileName;
+                }
             }
-            catch (System.Exception e)
+            catch
             {
-                throw e;
+                throw;
             }
             return resultFileName;
         }
