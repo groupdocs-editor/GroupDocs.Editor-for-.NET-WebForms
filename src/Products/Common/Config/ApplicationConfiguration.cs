@@ -14,7 +14,7 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Config
     /// </summary>
     public class ApplicationConfiguration
     {
-        private static string LicensePath = "Licenses";
+        private string LicensePath = "Licenses";
         
         /// <summary>
         /// Get license path from the application configuration section of the web.config
