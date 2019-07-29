@@ -34,6 +34,13 @@ This web application demonstrates the powerful capabilities of GroupDocs.Editor 
 | Extensible Markup Language  | `XML`,`XML`, `XPS`                                                                                                                 |
 
 
+## Demo Video
+
+<p align="center">
+  <a title="Document editor for .NET " href="https://youtu.be/pcqg4y87S8I"> 
+    <img src="https://raw.githubusercontent.com/groupdocs-editor/groupdocs-editor.github.io/master/resources/image/editor.gif" width="100%" style="width:100%;">
+  </a>
+</p>
 
 ## Features
 - Responsive design
