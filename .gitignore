@@ -1,3 +1,4 @@
+.DS_Store
 /packages
 /.vs
 /src/bin
@@ -17,3 +18,7 @@ src/package-lock.json
 /GroupDocs.Editor.WebForms.Test/obj
 /GroupDocs.Editor.WebForms.Test/bin
 /src/node_modules
+src/DocumentSamples
+!src/DocumentSamples/Editor/.gitkeep
+src/Licenses
+!src/Licenses/.gitkeep
