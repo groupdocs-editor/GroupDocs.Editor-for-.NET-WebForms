@@ -15,7 +15,9 @@ src/package-lock.json
 /GroupDocs.Editor.WebForms.Test/bin
 /GroupDocs.Editor.WebForms.Test/obj
 /src/node_modules
+src/DocumentSamples
 !src/DocumentSamples/Editor/.gitkeep
 src/Licenses
 !src/Licenses/.gitkeep
 /src/node
+/src/client/package-lock.json
