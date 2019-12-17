@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Editor for .NET MVC</title>
+    <title>Editor for .NET Web Forms</title>
     <link rel="icon" type="image/x-icon" href="resources/editor/favicon.ico" />
 </head>
 <body>
