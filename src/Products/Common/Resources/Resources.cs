@@ -1,7 +1,6 @@
 ﻿using GroupDocs.Editor.WebForms.Products.Common.Entity.Web;
 using System;
 using System.IO;
-using System.Web;
 
 namespace GroupDocs.Editor.WebForms.Products.Common.Resources
 {
@@ -47,7 +46,7 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
         /// </summary>
         /// <param name="ex">Exception</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(System.Exception ex)
+        public ExceptionEntity GenerateException(Exception ex)
         {
             // Initiate Exception entity
             ExceptionEntity exceptionEntity = new ExceptionEntity();
@@ -63,17 +62,17 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
         /// <param name="ex">Exception</param>
         /// <param name="password">string</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(System.Exception ex, String password)
+        public ExceptionEntity GenerateException(Exception ex, String password)
         {
             // Initiate exception
             ExceptionEntity exceptionEntity = new ExceptionEntity();
             // Check if exception message contains password and password is empty
-            if (ex.Message.Contains("password") && String.IsNullOrEmpty(password))
+            if (ex.Message.ToLowerInvariant().Contains("password") && String.IsNullOrEmpty(password))
             {
                 exceptionEntity.message = "Password Required";
             }
             // Check if exception contains password and password is set
-            else if (ex.Message.Contains("password") && !String.IsNullOrEmpty(password))
+            else if (ex.Message.ToLowerInvariant().Contains("password") && !String.IsNullOrEmpty(password))
             {
                 exceptionEntity.message = "Incorrect password";
             }
