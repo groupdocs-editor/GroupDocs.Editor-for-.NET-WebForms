@@ -46,7 +46,7 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
         /// </summary>
         /// <param name="ex">Exception</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(Exception ex)
+        public static ExceptionEntity GenerateException(Exception ex)
         {
             // Initiate Exception entity
             ExceptionEntity exceptionEntity = new ExceptionEntity();
@@ -62,7 +62,7 @@ namespace GroupDocs.Editor.WebForms.Products.Common.Resources
         /// <param name="ex">Exception</param>
         /// <param name="password">string</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(Exception ex, String password)
+        public static ExceptionEntity GenerateException(Exception ex, String password)
         {
             // Initiate exception
             ExceptionEntity exceptionEntity = new ExceptionEntity();

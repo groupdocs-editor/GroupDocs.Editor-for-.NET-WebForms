@@ -99,7 +99,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
             }
         }
 
@@ -132,12 +132,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (PasswordRequiredException ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.Forbidden, new Resources().GenerateException(ex, postedData.password));
+                return Request.CreateResponse(HttpStatusCode.Forbidden, Resources.GenerateException(ex, postedData.password));
             }
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex, postedData.password));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex, postedData.password));
             }
         }
 
@@ -232,7 +232,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
             }
         }
 
@@ -301,7 +301,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex, postedData.getPassword()));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex, postedData.getPassword()));
             }
         }
 
