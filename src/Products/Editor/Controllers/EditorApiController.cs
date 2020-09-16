@@ -367,18 +367,17 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
         private static ILoadOptions GetLoadOptions(string guid)
         {
-            string extension = Path.GetExtension(guid).Replace(".", "");
-            extension = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(extension);
+            string extension = Path.GetExtension(guid).Replace(".", "").ToLowerInvariant();
             ILoadOptions options = null;
 
             foreach (var item in typeof(WordProcessingFormats).GetFields())
             {
-                if (item.Name.Equals("Auto"))
+                if (item.Name.ToLowerInvariant().Equals("auto"))
                 {
                     continue;
                 }
 
-                if (item.Name.Equals(extension))
+                if (item.Name.ToLowerInvariant().Equals(extension))
                 {
                     options = new WordProcessingLoadOptions();
                     break;
@@ -387,12 +386,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
             foreach (var item in typeof(PresentationFormats).GetFields())
             {
-                if (item.Name.Equals("Auto"))
+                if (item.Name.ToLowerInvariant().Equals("auto"))
                 {
                     continue;
                 }
 
-                if (item.Name.Equals(extension))
+                if (item.Name.ToLowerInvariant().Equals(extension))
                 {
                     options = new PresentationLoadOptions();
                     break;
@@ -401,12 +400,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
             foreach (var item in typeof(SpreadsheetFormats).GetFields())
             {
-                if (item.Name.Equals("Auto"))
+                if (item.Name.ToLowerInvariant().Equals("auto"))
                 {
                     continue;
                 }
 
-                if (item.Name.Equals(extension))
+                if (item.Name.ToLowerInvariant().Equals(extension))
                 {
                     options = new SpreadsheetLoadOptions();
                     break;
@@ -418,11 +417,10 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
         private static IEditOptions GetEditOptions(string guid)
         {
-            string extension = Path.GetExtension(guid).Replace(".", "");
-            extension = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(extension);
+            string extension = Path.GetExtension(guid).Replace(".", "").ToLowerInvariant();
             IEditOptions options = null;
 
-            if (extension.Equals("Txt"))
+            if (extension.ToLowerInvariant().Equals("txt"))
             {
                 options = new TextEditOptions();
             }
@@ -430,12 +428,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             {
                 foreach (var item in typeof(WordProcessingFormats).GetFields())
                 {
-                    if (item.Name.Equals("Auto"))
+                    if (item.Name.ToLowerInvariant().Equals("auto"))
                     {
                         continue;
                     }
 
-                    if (item.Name.Equals(extension))
+                    if (item.Name.ToLowerInvariant().Equals(extension))
                     {
                         options = new WordProcessingEditOptions();
                         break;
@@ -444,12 +442,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                 foreach (var item in typeof(PresentationFormats).GetFields())
                 {
-                    if (item.Name.Equals("Auto"))
+                    if (item.Name.ToLowerInvariant().Equals("auto"))
                     {
                         continue;
                     }
 
-                    if (item.Name.Equals(extension))
+                    if (item.Name.ToLowerInvariant().Equals(extension))
                     {
                         options = new PresentationEditOptions();
                         break;
@@ -467,11 +465,10 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
         private ISaveOptions GetSaveOptions(string guid)
         {
-            string extension = Path.GetExtension(guid).Replace(".", "");
-            extension = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(extension);
+            string extension = Path.GetExtension(guid).Replace(".", "").ToLowerInvariant();
             ISaveOptions options = null;
 
-            if (extension.Equals("Txt"))
+            if (extension.ToLowerInvariant().Equals("txt"))
             {
                 options = new TextSaveOptions();
             }
@@ -479,11 +476,11 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             {
                 foreach (var item in typeof(WordProcessingFormats).GetFields())
                 {
-                    if (item.Name.Equals("Auto"))
+                    if (item.Name.ToLowerInvariant().Equals("auto"))
                     {
                         continue;
                     }
-                    if (item.Name.Equals(extension))
+                    if (item.Name.ToLowerInvariant().Equals(extension))
                     {
                         WordProcessingFormats format = WordProcessingFormats.FromExtension(extension);
                         options = new WordProcessingSaveOptions(format);
@@ -493,12 +490,12 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                 foreach (var item in typeof(PresentationFormats).GetFields())
                 {
-                    if (item.Name.Equals("Auto"))
+                    if (item.Name.ToLowerInvariant().Equals("auto"))
                     {
                         continue;
                     }
 
-                    if (item.Name.Equals(extension))
+                    if (item.Name.ToLowerInvariant().Equals(extension))
                     {
                         PresentationFormats format = PresentationFormats.FromExtension(extension);
                         options = new PresentationSaveOptions(format);
