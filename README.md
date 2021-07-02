@@ -6,10 +6,11 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/92a01202aa6b45c39febe3fe77d1e6c6)](https://www.codacy.com/app/GroupDocs/GroupDocs.Editor-for-.NET-WebForms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms&amp;utm_campaign=Badge_Grade)
 [![GitHub license](https://img.shields.io/github/license/groupdocs-Editor/GroupDocs.Editor-for-.NET-WebForms.svg)](https://github.com/groupdocs-Editor/GroupDocs.Editor-for-.NET-WebForms/blob/master/LICENSE)
 
+:warning: **This repository has moved to https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos/WebForms**
+
 ## System Requirements
 - .NET Framework 4.5
 - Visual Studio 2015
-
 
 ## Document Editor API for .NET WebForms
 
